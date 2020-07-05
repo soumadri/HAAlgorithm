@@ -63,7 +63,7 @@ class TestCluster {
 		
 		List<HAInfoTriplet> triplets = cluster.performHA(failedHosts);
 		
-		logger.info("Before HA");
+		logger.info("After HA");
 		logger.info("-----------");
 		logger.info(cluster.toString());
 
