@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.filecluster</groupId>
+	<groupId>com.clustermanager.filecluster</groupId>
 	<artifactId>fileha</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
@@ -11,6 +11,17 @@
 			<artifactId>junit-jupiter</artifactId>
 			<version>5.6.2</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>5.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.owasp.esapi</groupId>
+			<artifactId>esapi</artifactId>
+			<version>2.2.0.0</version>
 		</dependency>
 	</dependencies>
 </project>
