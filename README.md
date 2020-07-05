@@ -51,3 +51,6 @@
  
  ## Design pattern used
  * `Singleton` pattern has been used to store the cluster graph as the cluster should not have multiple instances
+ 
+ ## Additional notes
+ * The output of the algorithm is a `List<HAInfoTriplet>`, where HAInfoTriplet is an object holding a triplet of `<file to be copied>, <from which other source host file can be copied>, <random destination host which is not source host or the host that went down>`
