@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,6 +20,8 @@ import com.filecluster.ha.HAInfoTriplet;
 class TestCluster {
 
 	HAFileCluster cluster;
+	
+	private static final Logger logger = Logger.getLogger(TestCluster.class.getName());
 
 	@BeforeEach
 	void setupCluster() {
@@ -54,7 +57,15 @@ class TestCluster {
 		String[] failedHosts = { "host2" };
 		String[] expectedHostsAfterFailure = { "host1", "host3", "host4" };
 
+		logger.info("Before HA");
+		logger.info("-----------");
+		logger.info(cluster.toString());
+		
 		List<HAInfoTriplet> triplets = cluster.performHA(failedHosts);
+		
+		logger.info("Before HA");
+		logger.info("-----------");
+		logger.info(cluster.toString());
 
 		assertEquals(true, (cluster.getHosts().containsAll(Arrays.asList(expectedHostsAfterFailure)) && // Dead host is
 																										// removed from
