@@ -28,7 +28,7 @@
           5. Add the file to the host `O(1) insertion in the graph`
     3. Remove the failed host from the cluster (including edges from files to the host) `O(f), where f = number of files present on the given host`
 
-Overall runtime complexity will be `O(h x f x n), where h <= 2, f = number of files present on the given host and n = no. of hosts - 2`
+**Overall runtime complexity is:** `O(h x f x n), where h <= 2, f = number of files present on the given host and n = no. of hosts - 2`
 > NOTE: If we assume, multiple hosts are not going down exactly at the same time and the bounds will improve to `O(f x n)`
 
 **Space complexity**
@@ -38,4 +38,4 @@ Overall runtime complexity will be `O(h x f x n), where h <= 2, f = number of fi
 * For the additional 2 lists (for files and hosts) the space complexity is `O(V)`
     > Where V = f + h, f = no. of files managed in the cluster and h = no. of hosts in the cluster
     
- Overall space complexity is: `O(E + V)`
+ **Overall space complexity is:** `O(E + V)`
