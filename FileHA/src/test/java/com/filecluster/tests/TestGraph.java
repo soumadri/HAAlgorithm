@@ -16,7 +16,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import com.filecluster.graph.Graph;
 
 @ExtendWith(TimingExtension.class)
-class GraphTests {
+class TestGraph {
 	Graph graph;
 
 	/**

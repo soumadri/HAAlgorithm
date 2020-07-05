@@ -24,16 +24,17 @@ public class ClusterAdministrator {
 
 		cluster.addFile("file5", "host4");
 
+		System.out.println("Cluster before HA");
+		System.out.println("-----------------------------");
 		System.out.println(cluster.toString());
 		System.out.println("-----------------------------");
 
 		String[] failedHosts = { "host2" };
+		 
+		cluster.performHA(failedHosts);		
 
-		long start = System.currentTimeMillis(); 
-		cluster.performHA(failedHosts);
-		long end = System.currentTimeMillis(); 
-        System.out.println((end - start) + "ms");
-
+        System.out.println("Cluster after HA");
+		System.out.println("-----------------------------");
 		System.out.println(cluster.toString());
 		System.out.println("-----------------------------");
 				

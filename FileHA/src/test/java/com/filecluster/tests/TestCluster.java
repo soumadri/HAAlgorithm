@@ -16,7 +16,7 @@ import com.filecluster.ha.HAFileCluster;
 import com.filecluster.ha.HAInfoTriplet;
 
 @ExtendWith(TimingExtension.class)
-class ClusterTests {
+class TestCluster {
 
 	HAFileCluster cluster;
 

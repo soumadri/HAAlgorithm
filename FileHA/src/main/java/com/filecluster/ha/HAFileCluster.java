@@ -39,18 +39,7 @@ public class HAFileCluster {
 
 		return haFileCluster;
 	}
-
-	/**
-	 * Remove all the failed nodes from hosts list (to avoid incorrect host
-	 * selection) For each failed nodes Retrieve the list of files present on that
-	 * host For each file hostWithCopies := Get connected nodes of the file from the
-	 * cluster graph excluding failed host sourceHost := hostWithCopies[0], as it is
-	 * guaranteed that a file will be always present in 2 hosts exxactly
-	 * possibleDestinationHosts := Get set difference of all hosts list and
-	 * hostWithCopies selectedTargetHost := Make a random selection on
-	 * possibleDestinationHosts list Add the file to the host Remove the failed host
-	 * from the cluster
-	 */
+	
 	public List<HAInfoTriplet> performHA(String[] failedHosts) {
 		List<HAInfoTriplet> haTriplets = new ArrayList<HAInfoTriplet>();
 		HashSet<String> failedHostList =  new HashSet<String>(Arrays.asList(failedHosts));
@@ -189,8 +178,10 @@ public class HAFileCluster {
 		String selectedItem = "";
 
 		for (String item : list) {
-			if (counter == selectedIndex)
+			if (counter == selectedIndex) {
 				selectedItem = item;
+				break;
+			}
 			counter++;
 		}
 
