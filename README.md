@@ -8,6 +8,15 @@
 ## Conceptual representation of the cluster graph
 ![Conceptual representation of cluster graph](https://raw.githubusercontent.com/soumadri/HAAlgorithm/master/HAGraph.png)
 
+## Assumptions
+* Only file name and host name are stored, no other properties are considered
+* Not more than 2 hosts can fail at the same time
+* Exactly 2 copies of each file will be managed on the server
+* The program will log & skip any file's HA for which both the source hosts have gone down at the same time
+* Filename & hostname cannot be same
+* Minimum 3 hosts must be there in a cluster in order to do HA
+* A whitelisting of file extension has been considered (if present)
+
 ## Algorithm analysis
 * The main HA function is <code>HAFileCluster.performHA(String[] failedHosts)</code>
 
@@ -39,3 +48,6 @@
     > Where V = f + h, f = no. of files managed in the cluster and h = no. of hosts in the cluster
     
  **Overall space complexity is:** `O(E + V)`
+ 
+ ## Design pattern used
+ * `Singleton` pattern has been used to store the cluster graph as the cluster should not have multiple instances
