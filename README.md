@@ -43,7 +43,7 @@
 **Space complexity**
 * For the cluster the space complexity is `O(E + V)`
     > Where E = 4f, f = no. of files managed in the cluster and V = f + h, where h = no. of hosts in the cluster
-    > As there can be exact 2 copies of each file, for undirected (or rather bidirectional) graph it will be 2x2f = 4f
+    > As there can be exact 2 copies of each file, for undirected (actually bidirectional edges) graph it will be 2x2f = 4f
 * For the additional 2 lists (for files and hosts) the space complexity is `O(V)`
     > Where V = f + h, f = no. of files managed in the cluster and h = no. of hosts in the cluster
     
